@@ -77,4 +77,16 @@ function quick_Sort(origArray) {
 var myArray = [88, 23, -55, 11, 0, 21, 3];
 console.log("Original array: " + myArray);
 var sortedArray = quick_Sort(myArray);
-console.log("Sorted array: " + sortedArray);
+console.log("Sorted array: " + sortedArray); // Contagem de numeros inteiros
+
+function valoresInteiros(n) {
+  var count = 0;
+
+  for (var i = 1; i <= n; i++) {
+    count += 1;
+  }
+
+  return count;
+}
+
+console.log(valoresInteiros(110));

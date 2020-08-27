@@ -14,6 +14,27 @@ function addNumbers(){
 
 }
 
-buttonElement.onclick = addNumbers;
+// buttonElement.onclick = addNumbers;
+
+
+// 1- Numero primo
+
+function primeNumber(n){
+
+  if (n < 2) return 'Numero não é primo';
+
+  for (var i = 2; i < n; i++) {
+
+    if(n % i === 0)
+
+    return 'Numero não é primo';
+}
+return 'Numero é primo';
+
+}
+
+var check = console.log(primeNumber(131))
+
+
 
 

@@ -17,7 +17,7 @@ function addNumbers(){
 // buttonElement.onclick = addNumbers;
 
 
-// 1- Numero primo
+// #1- Numero primo
 
 function primeNumber(n){
 
@@ -36,16 +36,35 @@ return 'Numero é primo';
 var check = console.log(primeNumber(131))
 
 
-// 2 - Sequencia Fibbonaci
+// #2 - Sequencia Fibbonaci
 
 const fibonacci = num => {
 
     if(num < 2) {
   return num
-  
+
   }
   return fibonacci(num - 1) + fibonacci(num - 2)
 }
 
-console.log(fibonacci(17))
+// console.log(fibonacci(17))
+
+// console.log(mdc(48, 30))
+
+// #3 - Máximo divisor comum
+
+function mdcDoisNumeros(m, n) {
+  if ((typeof m !== 'number') || (typeof n !== 'number')) 
+    return false;
+  m = Math.abs(m);
+  n = Math.abs(n);
+  while(n) {
+    var t = n;
+    n = m % n;
+    m = t;
+  }
+  return m;
+}
+
+console.log(mdcDoisNumeros(40, 20));
 

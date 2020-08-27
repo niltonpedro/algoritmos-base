@@ -23,4 +23,14 @@ function primeNumber(n) {
   return 'Numero é primo';
 }
 
-var check = console.log(primeNumber(131));
+var check = console.log(primeNumber(131)); // 2 - Sequencia Fibbonaci
+
+var fibonacci = function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  }
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+};
+
+console.log(fibonacci(17));

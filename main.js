@@ -1,19 +1,19 @@
-class TodoList {
+var inputNumber = document.querySelector('#app input');
+var buttonElement = document.querySelector('#app button')
 
-  constructor(){
-    this.todos = [];
-  }
+var numbers = [];
 
-  addTodo(){
-    this.todos.push("comprar pão");
+function addNumbers(){
 
-    console.log(this.todos);
+  var inputValue = inputNumber.value;
 
-  }
+  numbers.push(inputValue);
+  inputNumber.value = '';
+
+  console.log(numbers);
+
 }
 
-const ListaTodos = new TodoList();
+buttonElement.onclick = addNumbers;
 
-document.getElementById('adicionar').onclick = function() {
-  ListaTodos.addTodo();
-}
+

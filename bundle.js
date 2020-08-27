@@ -1,25 +1,92 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var inputNumber = document.querySelector('#app input');
+var buttonElement = document.querySelector('#app button');
+var numbers = [];
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function addNumbers() {
+  var inputValue = inputNumber.value;
+  numbers.push(inputValue);
+  inputNumber.value = '';
+  console.log(numbers);
+} // buttonElement.onclick = addNumbers;
+// #1- Numero primo
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-alert("teste");
+function primeNumber(n) {
+  if (n < 2) return 'Numero não é primo';
 
-var Teste = /*#__PURE__*/function () {
-  function Teste() {
-    _classCallCheck(this, Teste);
+  for (var i = 2; i < n; i++) {
+    if (n % i === 0) return 'Numero não é primo';
   }
 
-  _createClass(Teste, [{
-    key: "metodo",
-    value: function metodo() {}
-  }, {
-    key: "metodo2",
-    value: function metodo2() {}
-  }]);
+  return 'Numero é primo';
+}
 
-  return Teste;
-}();
+var check = console.log(primeNumber(131)); // #2 - Sequencia Fibbonaci
+
+var fibonacci = function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  }
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}; // console.log(fibonacci(17))
+// console.log(mdc(48, 30))
+// #3 - Máximo divisor comum
+
+
+function mdcDoisNumeros(m, n) {
+  if (typeof m !== 'number' || typeof n !== 'number') return false;
+  m = Math.abs(m);
+  n = Math.abs(n);
+
+  while (n) {
+    var t = n;
+    n = m % n;
+    m = t;
+  }
+
+  return m;
+} // console.log(mdcDoisNumeros(40, 20));
+// #4 Ordenação de um array com método Quicksort
+
+
+function quick_Sort(origArray) {
+  if (origArray.length <= 1) {
+    return origArray;
+  } else {
+    var left = [];
+    var right = [];
+    var newArray = [];
+    var pivot = origArray.pop();
+    var length = origArray.length;
+
+    for (var i = 0; i < length; i++) {
+      if (origArray[i] <= pivot) {
+        left.push(origArray[i]);
+      } else {
+        right.push(origArray[i]);
+      }
+    }
+
+    return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
+  }
+}
+
+var myArray = [88, 23, -55, 11, 0, 21, 3];
+console.log("Original array: " + myArray);
+var sortedArray = quick_Sort(myArray);
+console.log("Sorted array: " + sortedArray); // Contagem de numeros inteiros
+
+function valoresInteiros(n) {
+  var count = 0;
+
+  for (var i = 1; i <= n; i++) {
+    count += 1;
+  }
+
+  return count;
+}
+
+console.log(valoresInteiros(110));

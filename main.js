@@ -66,5 +66,35 @@ function mdcDoisNumeros(m, n) {
   return m;
 }
 
-console.log(mdcDoisNumeros(40, 20));
+// console.log(mdcDoisNumeros(40, 20));
 
+// #4 Ordenação de um array com método Quicksort
+
+function quick_Sort(origArray) {
+	if (origArray.length <= 1) { 
+		return origArray;
+	} else {
+
+		var left = [];
+		var right = [];
+		var newArray = [];
+		var pivot = origArray.pop();
+		var length = origArray.length;
+
+		for (var i = 0; i < length; i++) {
+			if (origArray[i] <= pivot) {
+				left.push(origArray[i]);
+			} else {
+				right.push(origArray[i]);
+			}
+		}
+
+		return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
+	}
+}
+
+var myArray = [88, 23, -55, 11, 0, 21, 3 ];
+
+console.log("Original array: " + myArray);
+var sortedArray = quick_Sort(myArray);
+console.log("Sorted array: " + sortedArray);
